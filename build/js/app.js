@@ -18,11 +18,28 @@ Calculator.prototype.pingPong = function(goal) {
     }
   }
   return output;
-}
+};
+
+Calculator.prototype.addition = function(number1, number2) {
+  return number1 + number2;
+};
 
 exports.calculatorModule = Calculator;
 
 },{}],2:[function(require,module,exports){
+var Calculator = require('./../js/pingpong.js').calculatorModule;
+
+$(document).ready(function() {
+  $('#addition').submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($('#number1').val());
+    var number2 = parseInt($('#number2').val());
+    var simpleCalculator = new Calculator("hot pink");
+    var output = simpleCalculator.addition(number1, number2);
+    $('#solution').append("<p>" + number1 + " plus " + number2 + " equals " + output + "</p>");
+  });
+});
+
 var Calculator = require('./../js/pingpong.js').calculatorModule;
 
 $(document).ready(function() {
