@@ -1,13 +1,12 @@
-var Calculator = require('./../js/pingpong.js').calculatorModule;
 
 $(document).ready(function() {
   $('#ping-pong-form').submit(function(event) {
     event.preventDefault();
-    var goal = $('#goal').val();
-    var simpleCalculator = new Calculator("hot pink");
-    var output = simpleCalculator.pingPong(goal);
+    let goal = $('#goal').val();
+    let simpleCalculator = new Calculator("hot pink");
+    let output = simpleCalculator.pingPong(goal);
     output.forEach(function(element) {
-      $('#solution').append("<li>" + element + "</li>");
+      $('#solution').append(`<li> ${element} </li>`);
     });
   });
 });

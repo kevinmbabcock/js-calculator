@@ -1,8 +1,8 @@
-var Calculator = require('./../js/pingpong.js').calculatorModule;
+import { Calculator } from './../js/pingpong.js';
 
 
 describe('Calculator', function() {
-  var reusableCalculator;
+  let reusableCalculator;
 
   beforeEach(function() {
     reusableCalculator = new Calculator("red");
